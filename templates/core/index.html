@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<main class="container mx-auto px-4 py-16">
+    <div class="max-w-3xl mx-auto text-center">
+        <div class="mb-16 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                <i class="fas fa-download mr-3"></i>YT Ultra Downloader
+            </h1>
+            <p class="text-xl text-white opacity-90">Download YouTube videos in maximum quality</p>
+        </div>
+
+        <form method="POST" class="bg-white rounded-2xl shadow-2xl p-6 transform transition hover:scale-102 duration-300">
+            {% csrf_token %}
+            <div class="flex flex-col md:flex-row items-center gap-4">
+                <input 
+                    type="url" 
+                    name="url"
+                    placeholder="Paste YouTube link here..."
+                    class="w-full px-6 py-4 text-lg border-2 border-purple-200 rounded-xl focus:border-purple-500 focus:ring-2 focus:ring-purple-200 outline-none transition"
+                    required
+                >
+                <button 
+                    type="submit"
+                    class="w-full md:w-auto px-8 py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2"
+                >
+                    <i class="fas fa-download"></i>
+                    <span>Download Now</span>
+                </button>
+            </div>
+        </form>
+
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-8 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition">
+                <i class="fas fa-hd text-5xl text-white mb-6"></i>
+                <h3 class="text-2xl font-bold text-white mb-4">4K Quality</h3>
+                <p class="text-white opacity-90">Get videos in maximum available resolution</p>
+            </div>
+            <div class="p-8 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition">
+                <i class="fas fa-bolt text-5xl text-white mb-6"></i>
+                <h3 class="text-2xl font-bold text-white mb-4">Instant Download</h3>
+                <p class="text-white opacity-90">No waiting time, direct download</p>
+            </div>
+            <div class="p-8 bg-white/10 backdrop-blur-sm rounded-2xl hover:bg-white/20 transition">
+                <i class="fas fa-shield-alt text-5xl text-white mb-6"></i>
+                <h3 class="text-2xl font-bold text-white mb-4">Safe & Secure</h3>
+                <p class="text-white opacity-90">No ads, no malware, guaranteed</p>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
